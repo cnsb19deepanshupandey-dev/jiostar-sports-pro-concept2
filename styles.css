@@ -93,7 +93,7 @@ button:focus-visible { outline: 1px solid var(--cyan); outline-offset: 4px; }
 .stadium-tier--front { top: 13%; height: 53%; border-width: 74px; border-color: rgba(10,12,11,.68); box-shadow: inset 0 2px 0 rgba(217,229,225,.16), inset 0 23px 0 rgba(104,121,116,.14); }
 .stadium-lights { position: absolute; top: 14%; left: 11%; right: 11%; display: flex; justify-content: space-around; }
 .stadium-lights i { width: 2px; height: 2px; border-radius: 50%; background: #effff8; box-shadow: 0 0 10px 4px rgba(214,255,239,.42); }
-.field-wrap { position: absolute; inset: 16% 8% -28%; perspective: 900px; transition: inset 1.5s var(--ease), transform 1.5s var(--ease), filter .8s ease; }
+.field-wrap { position: absolute; inset: 16% 8% -28%; perspective: 900px; perspective-origin: 50% 40%; transition: inset 1.5s var(--ease), perspective 1.5s var(--ease), perspective-origin 1.5s var(--ease), transform 1.5s var(--ease), filter .8s ease; }
 .field { position: absolute; inset: 0; border-radius: 50%; transform: rotateX(56deg); transform-style: preserve-3d; background: repeating-radial-gradient(ellipse, #1d523a 0 22px, #1a4935 23px 45px); box-shadow: 0 0 0 2px rgba(232,245,238,.5), 0 0 80px rgba(86,191,142,.13); transition: transform 1.4s var(--ease), border-radius 1.4s var(--ease); }
 .boundary { position: absolute; inset: 5%; border: 1px solid rgba(238,245,239,.64); border-radius: 50%; }
 .pitch { position: absolute; width: 9.5%; height: 42%; left: 45.25%; top: 29%; background: linear-gradient(90deg,#9a8e6c,#b6aa83 50%,#8f8465); border: 1px solid rgba(255,255,255,.45); }
@@ -125,14 +125,36 @@ button:focus-visible { outline: 1px solid var(--cyan); outline-offset: 4px; }
 .offer-link { position:absolute; z-index:9; right:1.3rem; bottom:1.4rem; padding:.3rem 0; border:0; background:none; cursor:pointer; color:rgba(242,241,235,.65); }
 
 /* Camera perspectives */
-.experience[data-camera="batter"] .field-wrap { inset: 10% 3% -72% 32%; transform: scale(1.45) rotate(-7deg); }
-.experience[data-camera="batter"] .field { transform: rotateX(67deg); }
-.experience[data-camera="stump"] .field-wrap { inset: 2% 25% -68%; transform: scale(1.65); }
-.experience[data-camera="stump"] .field { transform: rotateX(72deg); border-radius: 42%; }
-.experience[data-camera="spider"] .field-wrap { inset: 9% 12% -9%; }
-.experience[data-camera="spider"] .field { transform: rotateX(43deg) rotateZ(10deg); }
-.experience[data-camera="field"] .field-wrap { inset: 26% -20% -34% 26%; transform: rotate(10deg); }
-.experience[data-camera="field"] .field { transform: rotateX(61deg); }
+/* Each camera is a position in 3D: translateZ dollies toward the pitch inside
+   the wrapper's perspective, so the move reads as a camera travelling rather
+   than a flat zoom. Shorter perspective = wider, more dramatic lens. */
+
+/* The stadium behind parallaxes with the camera. Without this the backdrop
+   stays locked while the field moves, which kills the sense of travelling. */
+.experience[data-camera="batter"] .stadium-shell { transform: scale(1.25) translateY(-4%); }
+.experience[data-camera="stump"] .stadium-shell { transform: scale(1.5) translateY(-9%); opacity: .55; }
+.experience[data-camera="spider"] .stadium-shell { transform: scale(.92) translateY(3%); }
+.experience[data-camera="field"] .stadium-shell { transform: scale(1.15) translateX(-5%); }
+
+/* BROADCAST — high wide master shot, the reference position */
+.experience[data-camera="broadcast"] .field-wrap { perspective: 1100px; perspective-origin: 50% 32%; }
+.experience[data-camera="broadcast"] .field { transform: rotateX(56deg) translateZ(0); }
+
+/* BATTER — low and tight behind the striker, looking back up the pitch */
+.experience[data-camera="batter"] .field-wrap { inset: 8% 2% -78% 26%; perspective: 620px; perspective-origin: 50% 74%; }
+.experience[data-camera="batter"] .field { transform: rotateX(74deg) rotateZ(-6deg) translateZ(150px); }
+
+/* STUMP — the closest camera: down at bail height, right on top of the pitch */
+.experience[data-camera="stump"] .field-wrap { inset: -6% 16% -96%; perspective: 380px; perspective-origin: 50% 88%; }
+.experience[data-camera="stump"] .field { transform: rotateX(83deg) translateZ(300px); border-radius: 38%; }
+
+/* SPIDER — overhead aerial rig, pulled back and looking almost straight down */
+.experience[data-camera="spider"] .field-wrap { inset: 4% 10% -4%; perspective: 1500px; perspective-origin: 50% 18%; }
+.experience[data-camera="spider"] .field { transform: rotateX(32deg) rotateZ(9deg) translateZ(-120px); }
+
+/* FIELD — boundary-side camera, oblique across the ground from deep */
+.experience[data-camera="field"] .field-wrap { inset: 22% -26% -44% 22%; perspective: 700px; perspective-origin: 22% 58%; }
+.experience[data-camera="field"] .field { transform: rotateX(68deg) rotateZ(15deg) translateZ(90px); }
 
 /* Insights */
 .insight-layer { position:absolute; inset:0; z-index:5; opacity:0; transition:opacity .8s ease; pointer-events:none; }
