@@ -35,8 +35,13 @@ button:focus-visible { outline: 1px solid var(--cyan); outline-offset: 4px; }
 .brand span { font-size: 1rem; font-weight: 500; }
 .brand small { font: .52rem/1.2 var(--mono); letter-spacing: .08em; color: rgba(242,241,235,.58); }
 .feature-nav { display: flex; gap: 2.1rem; padding-top: .2rem; }
-.feature-nav button, .demo-button { font: .58rem/1 var(--mono); letter-spacing: .08em; color: rgba(242,241,235,.7); transition: color .3s ease; }
+.feature-nav button, .demo-button { font: .58rem/1 var(--mono); letter-spacing: .08em; color: rgba(242,241,235,.92); text-shadow: 0 1px 10px rgba(6,9,8,.9), 0 0 2px rgba(6,9,8,.8); transition: color .3s ease, opacity .3s ease; }
 .feature-nav button:hover, .demo-button:hover { color: var(--white); }
+.feature-nav button { position: relative; padding-bottom: .3rem; opacity: .78; }
+.feature-nav button::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); opacity: 0; transform: scaleX(.3); transition: opacity .3s ease, transform .3s var(--ease); }
+.feature-nav button:hover { opacity: 1; }
+.feature-nav button.active { color: var(--white); opacity: 1; }
+.feature-nav button.active::after { opacity: 1; transform: none; }
 .demo-button { justify-self: end; display: flex; align-items: center; gap: .7rem; }
 .demo-icon { display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border: 1px solid var(--edge); border-radius: 50%; font-size: .46rem; padding-left: .08rem; }
 
