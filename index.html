@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111211" />
+  <meta name="description" content="JioHotstar Sports Pro, an academic interactive concept prototype." />
+  <title>Sports Pro — Beyond the broadcast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <button class="brand" type="button" data-action="home" aria-label="Return to the Sports Pro introduction">
+      <span>SPORTS PRO</span>
+      <small>JIOHOTSTAR CONCEPT</small>
+    </button>
+    <nav class="feature-nav" aria-label="Prototype features">
+      <button type="button" data-feature="camera">MULTICAM</button>
+      <button type="button" data-feature="insights">INSIGHTS</button>
+      <button type="button" data-feature="together">TOGETHER</button>
+      <button type="button" data-feature="xr">XR</button>
+    </nav>
+    <button class="demo-button" type="button" data-action="demo">
+      <span class="demo-icon" aria-hidden="true">▶</span>
+      <span class="demo-label">PLAY DEMO</span>
+    </button>
+  </header>
+
+  <main class="experience" data-screen="hero" data-feature="camera" data-camera="broadcast">
+    <section class="hero-panel panel" aria-labelledby="hero-title">
+      <div class="frame frame--hero" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="hero-field" aria-hidden="true">
+        <svg class="contours" viewBox="0 0 1600 1000" role="presentation">
+          <defs>
+            <linearGradient id="spectral" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#6c5cff" />
+              <stop offset=".28" stop-color="#d064ff" />
+              <stop offset=".54" stop-color="#ff809f" />
+              <stop offset=".76" stop-color="#8fe7f2" />
+              <stop offset="1" stop-color="#f5e8c8" />
+            </linearGradient>
+            <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <g class="contour-shadow">
+            <ellipse cx="910" cy="410" rx="620" ry="332" />
+            <ellipse cx="910" cy="410" rx="570" ry="298" />
+            <ellipse cx="910" cy="410" rx="520" ry="264" />
+            <ellipse cx="910" cy="410" rx="470" ry="231" />
+            <ellipse cx="910" cy="410" rx="420" ry="199" />
+            <ellipse cx="910" cy="410" rx="370" ry="168" />
+            <ellipse cx="910" cy="410" rx="320" ry="138" />
+            <ellipse cx="910" cy="410" rx="270" ry="109" />
+            <ellipse cx="910" cy="410" rx="220" ry="82" />
+            <ellipse cx="910" cy="410" rx="170" ry="57" />
+            <ellipse cx="910" cy="410" rx="120" ry="34" />
+          </g>
+          <g class="contour-spectrum" filter="url(#soft-glow)">
+            <ellipse cx="910" cy="410" rx="620" ry="332" />
+            <ellipse cx="910" cy="410" rx="520" ry="264" />
+            <ellipse cx="910" cy="410" rx="420" ry="199" />
+            <ellipse cx="910" cy="410" rx="320" ry="138" />
+            <ellipse cx="910" cy="410" rx="220" ry="82" />
+            <ellipse cx="910" cy="410" rx="120" ry="34" />
+          </g>
+          <g class="signal-lines">
+            <path d="M92 745 C430 500 602 702 878 478 S1270 248 1568 390" />
+            <path d="M35 790 C430 543 611 752 890 526 S1280 293 1600 432" />
+            <path d="M0 840 C430 595 621 803 903 576 S1293 341 1600 482" />
+          </g>
+          <circle class="lens" cx="910" cy="410" r="20" />
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">PREMIUM SPORTS / EXPERIENCE CONCEPT</p>
+        <h1 id="hero-title">Beyond the<br />broadcast.</h1>
+        <p class="hero-deck">Control the camera. Read the play. Feel the stadium.</p>
+      </div>
+      <div class="hero-meta utility">
+        <span>JIOHOTSTAR SPORTS PRO</span>
+        <span>ACADEMIC CONCEPT ©2026</span>
+      </div>
+      <button class="enter-button utility" type="button" data-action="enter">
+        ENTER EXPERIENCE <span aria-hidden="true">↓</span>
+      </button>
+    </section>
+
+    <section class="live-panel panel" aria-label="Interactive Sports Pro live match simulation">
+      <div class="frame frame--live" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="match-stage">
+        <div class="sky-glow" aria-hidden="true"></div>
+        <div class="stadium-shell" aria-hidden="true">
+          <div class="stadium-tier stadium-tier--back"></div>
+          <div class="stadium-lights">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="stadium-tier stadium-tier--front"></div>
+        </div>
+
+        <div class="field-wrap" aria-hidden="true">
+          <div class="field">
+            <div class="boundary"></div>
+            <div class="pitch">
+              <i class="crease crease--top"></i><i class="crease crease--bottom"></i>
+              <i class="wickets wickets--top"></i><i class="wickets wickets--bottom"></i>
+            </div>
+            <span class="player player--1"></span><span class="player player--2"></span>
+            <span class="player player--3"></span><span class="player player--4"></span>
+            <span class="player player--5"></span><span class="player player--6"></span>
+            <span class="player player--7"></span><span class="player player--8"></span>
+            <span class="player batter"></span><span class="player bowler"></span>
+            <svg class="ball-trace" viewBox="0 0 900 500">
+              <path d="M450 92 C502 182 518 246 457 349" />
+              <circle cx="457" cy="349" r="6" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="xr-horizon" aria-hidden="true">
+          <div class="xr-field-lines"></div>
+          <div class="xr-score-ribbon">IND 164/3&nbsp;&nbsp;&nbsp;17.2 OVERS&nbsp;&nbsp;&nbsp;TARGET 191</div>
+        </div>
+
+        <div class="audio-visual" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+        </div>
+
+        <div class="live-topbar utility">
+          <div class="live-status"><i></i> LIVE <span>SPORTS PRO</span></div>
+          <div class="match-note">SIMULATED MATCH / DEMO DATA</div>
+          <div class="clock" aria-label="Local demo time">20:42</div>
+        </div>
+
+        <div class="scoreboard">
+          <div><span>IND</span><strong>164/3</strong></div>
+          <div><span>OVERS</span><strong>17.2</strong></div>
+          <p>IND NEED 27 FROM 16</p>
+        </div>
+
+        <div class="feature-statement" aria-live="polite">
+          <span class="statement-index utility">01 / CONTROL</span>
+          <p class="statement-copy">Your match.<br />Your camera.</p>
+        </div>
+
+        <div class="insight-layer" aria-hidden="true">
+          <div class="insight insight--prob"><span>WIN PROBABILITY</span><strong>72%</strong><i style="--value:72%"></i></div>
+          <div class="insight insight--speed"><span>BALL SPEED</span><strong>143.2</strong><small>KM/H</small></div>
+          <div class="insight insight--rate"><span>REQUIRED RATE</span><strong>10.4</strong></div>
+          <div class="insight insight--score"><span>PROJECTED</span><strong>194</strong></div>
+          <div class="tracking-node tracking-node--a">DEEP COVER</div>
+          <div class="tracking-node tracking-node--b">STRIKE ZONE</div>
+        </div>
+
+        <aside class="together-panel" aria-label="Watch Together demo">
+          <p class="utility">WATCH TOGETHER <span>3 ONLINE</span></p>
+          <div class="friend"><i>AM</i><div><strong>Aarav</strong><span>WHAT A SHOT.</span></div></div>
+          <div class="friend"><i>MY</i><div><strong>Maya</strong><span>143 KM/H ◌</span></div></div>
+          <div class="friend friend--joining"><i>KB</i><div><strong>Kabir</strong><span>JOINED THE ROOM</span></div></div>
+          <p class="together-tagline">Stadium energy,<br />from anywhere.</p>
+        </aside>
+
+        <aside class="predict-panel" aria-label="Free-to-play prediction demo">
+          <div class="predict-head utility"><span>NEXT BALL?</span><small>FREE-TO-PLAY</small></div>
+          <div class="predict-options">
+            <button type="button" data-predict="dot">DOT</button>
+            <button type="button" data-predict="runs">1–3 RUNS</button>
+            <button type="button" data-predict="boundary">BOUNDARY</button>
+            <button type="button" data-predict="wicket">WICKET</button>
+          </div>
+          <div class="prediction-result" aria-live="polite"><span>CALL LOCKED</span><strong>+100 PTS</strong></div>
+        </aside>
+
+        <div class="camera-controls controls-strip" role="group" aria-label="Choose a camera angle">
+          <span class="utility">CAMERA</span>
+          <button type="button" data-camera="broadcast" class="active">BROADCAST</button>
+          <button type="button" data-camera="batter">BATTER</button>
+          <button type="button" data-camera="stump">STUMP</button>
+          <button type="button" data-camera="spider">SPIDER</button>
+          <button type="button" data-camera="field">FIELD</button>
+        </div>
+
+        <div class="audio-controls controls-strip" role="group" aria-label="Choose an audio perspective">
+          <span class="utility">AUDIO</span>
+          <button type="button" data-audio="broadcast">BROADCAST</button>
+          <button type="button" data-audio="stadium">STADIUM</button>
+          <button type="button" data-audio="commentary">COMMENTARY</button>
+          <button type="button" data-audio="immersive" class="active">IMMERSIVE</button>
+        </div>
+
+        <div class="experience-rail" role="tablist" aria-label="Sports Pro features">
+          <button role="tab" type="button" data-feature="camera"><span>01</span>CONTROL</button>
+          <button role="tab" type="button" data-feature="insights"><span>02</span>CONTEXT</button>
+          <button role="tab" type="button" data-feature="audio"><span>03</span>IMMERSION</button>
+          <button role="tab" type="button" data-feature="together"><span>04</span>CONNECTION</button>
+          <button role="tab" type="button" data-feature="predict"><span>05</span>PREDICT</button>
+          <button role="tab" type="button" data-feature="xr"><span>06</span>XR</button>
+        </div>
+
+        <button class="offer-link utility" type="button" data-action="offer">VIEW PROPOSITION →</button>
+      </div>
+    </section>
+
+    <section class="offer-panel panel" aria-label="Sports Pro concept proposition">
+      <div class="frame frame--offer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="offer-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="offer-kicker utility">JIOHOTSTAR / ACADEMIC PRODUCT CONCEPT</div>
+      <div class="offer-title">
+        <p>SPORTS PRO</p>
+        <h2>The best seat<br />is now software.</h2>
+      </div>
+      <div class="offer-details">
+        <div class="concept-price">
+          <span class="utility">ILLUSTRATIVE ADD-ON</span>
+          <strong><sup>+</sup>₹99<small>/ MONTH</small></strong>
+          <p>CONCEPT PRICE</p>
+        </div>
+        <ul>
+          <li>Multi-camera control</li>
+          <li>Live Insights</li>
+          <li>Spatial Audio</li>
+          <li>Watch Together</li>
+          <li>Free-to-play predictions</li>
+          <li>Optional XR experience</li>
+        </ul>
+      </div>
+      <div class="ecosystem-line utility" aria-label="Concept rationale">
+        <span>SPORTS RIGHTS</span><i>×</i><span>PRODUCTION</span><i>×</i><span>CONNECTIVITY</span><i>×</i><span>FIRST-PARTY DATA</span><i>→</i><strong>SPORTS PRO</strong>
+      </div>
+      <div class="offer-footer utility">
+        <span>ACADEMIC CONCEPT PROTOTYPE</span>
+        <span>SPJIMR ENTREPRENEURIAL THINKING</span>
+        <button type="button" data-action="restart">RESTART EXPERIENCE ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="demo-progress" aria-hidden="true"><i></i><span>00:00 / 00:45</span></div>
+  <div class="mode-toast utility" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
